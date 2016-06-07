@@ -1,0 +1,16 @@
+.classpath
+.DS_Store
+.project
+*~
+bin/
+build/
+.gradle/
+.settings/
+repos/
+gradle/
+*.class
+*.bkp
+*.out
+.classpath
+.project
+.externalToolBuilders/

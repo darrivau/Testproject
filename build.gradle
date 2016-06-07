@@ -1,0 +1,39 @@
+// Apply the java plugin to add support for Java
+apply plugin: 'java'
+apply plugin: 'application'
+
+version = '1.0.0'
+applicationName = "ImmutableComplex"
+mainClassName = "main.java.Main"
+
+repositories {
+	jcenter()
+	//flatDir {dirs 'lib'}
+}
+
+dependencies {
+	//compile "hamcrest:hamcrest-all:1.3"
+	testCompile "junit:junit:4.11"
+//	testCompile name: 'junit-4.11'
+}
+
+// Local path for Maven depository
+uploadArchives {
+    repositories {
+       flatDir {
+           dirs 'repos'
+       }
+    }
+}
+
+// Local installation task. 
+//'installDir' is property that should be defined with : "gradle installLocally -p /install/path"
+task installLocally(type: Copy){
+    from installDist
+    into project.hasProperty('installDir') ? file(project.getProperty('installDir')) : file('install')
+}
+
+installLocally.onlyIf {
+	project.hasProperty('installDir')
+}
+
