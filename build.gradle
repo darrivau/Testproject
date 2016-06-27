@@ -27,7 +27,7 @@ uploadArchives {
 }
 
 // Local installation task. 
-//'installDir' is property that should be defined with : "gradle installLocally -p /install/path"
+//'installDir' is property that should be defined with : "gradle installLocally -PinstallDir="/install/path""
 task installLocally(type: Copy){
     from installDist
     into project.hasProperty('installDir') ? file(project.getProperty('installDir')) : file('install')
