@@ -1,0 +1,39 @@
+# CI Config for Test_Project / gitlab
+stages:
+  - build
+  - test
+
+# Global runner/docker image definition
+image: openjdk:8
+
+# Main build 
+build: 
+  stage: build
+  tags:
+    - docker
+  script:
+    - ./gradlew build
+
+
+# Tests 
+tests:
+  stage: test
+  tags:
+    - docker
+  dependencies:
+    - build
+  script:
+    - ./gradlew test 
+    - ./gradlew jacocoMergeReport
+  artifacts:
+    paths:
+      # Tests report
+      - build/reports/tests
+      # Tests coverage report
+      - build/reports/jacoco/merge/html/
+    when: on_failure
+    expire_in: 8d
+  except:
+    - tags
+
+
