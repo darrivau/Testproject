@@ -2,6 +2,7 @@
 stages:
   - build
   - test
+  - deploy
 
 # Global runner/docker image definition
 image: openjdk:8
@@ -31,4 +32,19 @@ tests:
       - build
     expire_in: 10d
 
+
+# Run the main and show the tests results
+pages:
+  stage: deploy
+  tags:
+    - docker
+  dependencies:
+    - test
+  script:
+    - ./gradlew run
+    - mkdir -p public/Tests_Results && cp -r build/reports/tests/test/* public/Tests_Results/
+    - mkdir -p public/Jacoco && cp -r build/jacocoHtml/* public/Jacoco/
+  artifacts:
+    paths:
+      - public
 
