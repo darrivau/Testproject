@@ -40,6 +40,7 @@ pages:
     - docker
   script:
     - ./gradlew run
+    - ./gradlew javadoc
     - mkdir -p public/ && cp -r index.html public/
     - mkdir -p public/Tests_Results && cp -r build/reports/tests/test/* public/Tests_Results/
     - mkdir -p public/Jacoco && cp -r build/jacocoHtml/* public/Jacoco/
