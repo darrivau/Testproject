@@ -1,7 +1,7 @@
 /**
  * Complex class file
  */
-package main.java;
+
 
 
 /**
@@ -20,30 +20,55 @@ public final class Complex {
 		this.im = im;
 	}
 	
-	//Accessors without mutator
+	/**
+	 * Accessor on real part
+	 * @return double real part
+	 */
 	public double realPart(){return re;}
+	/**
+	 * Accessor on imaginary part
+	 * @return double imaginary part
+	 */
 	public double imaginaryPart(){return im;}
 	
-	//Arithmetic operators
+	/**
+	 * Arithmetic operator : addition
+	 * @param c complex to add to this
+	 * @return Complex this + c
+	 */
 	public Complex add(Complex c){
 		return new Complex(re + c.re, im + c.im);
 	}
 	
+	/**
+	 * Arithmetic operator : substraction
+	 * @param c complex to substract from this
+	 * @return Complex this - c
+	 */
 	public Complex subtract(Complex c){
 		return new Complex(re - c.re, im - c.im);
 	}
 	
+	/**
+	 * Arithmetic operator : multiplication
+	 * @param c complex to multiply by this
+	 * @return Complex this * c
+	 */
 	public Complex multiply(Complex c){
 		return new Complex(re * c.re - im * c.im, re * c.im + im * c.re);
 	}
 	
+	/**
+	 * Arithmetic operator : division
+	 * @param c complex that divides this
+	 * @return Complex this / c
+	 */
 	public Complex divide(Complex c){
 		double tmp = c.re * c.re + c.im * c.im;
 		return new Complex((re * c.re + im * c.im) / tmp,
 				(im * c.re - re * c.im) / tmp);
 	}
 
-	//Comparison operator
 	@Override 
 	public boolean equals(Object o){
 		if (o == this)
@@ -68,13 +93,16 @@ public final class Complex {
 		return (int) (longBits ^ (longBits >>> 32));
 	}
 	
-	//Display
+
 	@Override
 	public String toString() {
 		return "(" + re + " + " + im + "i)";
 	}
 	
-	//Conjugate
+	/**
+	 * Return the conjugate of this
+	 * @return Complex cojugate of this
+	 */
 	public Complex conj(){
 		return new Complex(re,-im);
 	}

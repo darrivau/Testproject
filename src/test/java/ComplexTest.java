@@ -1,7 +1,6 @@
 /**
  * Test file for Complex class
  */
-package test.java;
 
 import org.junit.Assert;
 
@@ -10,8 +9,6 @@ import java.util.concurrent.ThreadLocalRandom;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-
-import main.java.Complex;
 
 /**
  * Junit test case for my immutable complex class.
@@ -41,7 +38,7 @@ public class ComplexTest {
 	}
 
 	/**
-	 * Test method for {@link main.java.Complex#Complex(double, double)}.
+	 * Test method for {@link Complex#Complex(double, double)}.
 	 */
 	@Test
 	public final void testComplex() {
@@ -51,7 +48,7 @@ public class ComplexTest {
 	}
 
 	/**
-	 * Test method for {@link main.java.Complex#realPart()}.
+	 * Test method for {@link Complex#realPart()}.
 	 */
 	@Test
 	public final void testRealPart() {
@@ -62,7 +59,7 @@ public class ComplexTest {
 	}
 
 	/**
-	 * Test method for {@link main.java.Complex#imaginaryPart()}.
+	 * Test method for {@link Complex#imaginaryPart()}.
 	 */
 	@Test
 	public final void testImaginaryPart() {
@@ -73,7 +70,7 @@ public class ComplexTest {
 	}
 
 	/**
-	 * Test method for {@link main.java.Complex#add(main.java.Complex)}.
+	 * Test method for {@link Complex#add(Complex)}.
 	 */
 	@Test
 	public final void testAdd() {
@@ -90,7 +87,7 @@ public class ComplexTest {
 	}
 
 	/**
-	 * Test method for {@link main.java.Complex#subtract(main.java.Complex)}.
+	 * Test method for {@link Complex#subtract(Complex)}.
 	 */
 	@Test
 	public final void testSubtract() {
@@ -107,7 +104,7 @@ public class ComplexTest {
 	}
 
 	/**
-	 * Test method for {@link main.java.Complex#multiply(main.java.Complex)}.
+	 * Test method for {@link Complex#multiply(Complex)}.
 	 */
 	@Test
 	public final void testMulptiply() {
@@ -124,7 +121,7 @@ public class ComplexTest {
 	}
 
 	/**
-	 * Test method for {@link main.java.Complex#divide(main.java.Complex)}.
+	 * Test method for {@link Complex#divide(Complex)}.
 	 */
 	@Test
 	public final void testDivide() {
@@ -147,7 +144,7 @@ public class ComplexTest {
 	}
 
 	/**
-	 * Test method for {@link main.java.Complex#equals(java.lang.Object)}.
+	 * Test method for {@link Complex#equals(java.lang.Object)}.
 	 */
 	@Test
 	public final void testEqualsObject() {
@@ -161,7 +158,7 @@ public class ComplexTest {
 	}
 
 	/**
-	 * Test method for {@link main.java.Complex#toString()}.
+	 * Test method for {@link Complex#toString()}.
 	 */
 	@Test
 	public final void testToString() {
