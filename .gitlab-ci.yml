@@ -23,8 +23,7 @@ tests:
   dependencies:
     - build
   script:
-    - ./gradlew test 
-    - ./gradlew jacocoMergeReport
+    - ./gradlew test
   artifacts:
     when: always
     untracked: true
