@@ -38,8 +38,6 @@ pages:
   stage: deploy
   tags:
     - docker
-  dependencies:
-    - test
   script:
     - ./gradlew run
     - mkdir -p public/Tests_Results && cp -r build/reports/tests/test/* public/Tests_Results/
