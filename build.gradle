@@ -1,6 +1,11 @@
 // Apply the java plugin to add support for Java
 apply plugin: 'java'
 apply plugin: 'application'
+apply plugin: 'jacoco'
+
+jacoco {
+    toolVersion = "0.8.1" //checked at http://www.eclemma.org/jacoco/
+}
 
 version = '1.0.0'
 applicationName = "ImmutableComplex"
@@ -36,4 +41,14 @@ task installLocally(type: Copy){
 installLocally.onlyIf {
 	project.hasProperty('installDir')
 }
+
+jacocoTestReport {
+    reports {
+        xml.enabled false
+        csv.enabled false
+        html.destination "${buildDir}/jacocoHtml"
+    }
+}
+
+test.finalizedBy(jacocoTestReport)
 

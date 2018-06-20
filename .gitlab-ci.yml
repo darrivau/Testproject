@@ -26,14 +26,10 @@ tests:
     - ./gradlew test 
     - ./gradlew jacocoMergeReport
   artifacts:
+    when: always
+    untracked: true
     paths:
-      # Tests report
-      - build/reports/tests
-      # Tests coverage report
-      - build/reports/jacoco/merge/html/
-    when: on_failure
-    expire_in: 8d
-  except:
-    - tags
+      - build
+    expire_in: 10d
 
 
