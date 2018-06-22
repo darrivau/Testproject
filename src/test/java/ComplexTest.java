@@ -1,6 +1,7 @@
 /**
  * Test file for Complex class
  */
+package test.java;
 
 import org.junit.Assert;
 
@@ -9,6 +10,8 @@ import java.util.concurrent.ThreadLocalRandom;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+
+import main.java.Complex;
 
 /**
  * Junit test case for my immutable complex class.

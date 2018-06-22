@@ -5,7 +5,7 @@ set(CMAKE_JAVA_TARGET_OUTPUT_NAME immutablecomplex-${IMMCOMPLX_VERSION})
 
 # Compile the source files into a jar with a main
 add_jar(immutablecomplex java/Complex.java java/Main.java 
-ENTRY_POINT main.java.Main
+ENTRY_POINT main/java/Main
 VERSION ${IMMCOMPLX_VERSION})
 
 # Get the jar location

@@ -1,7 +1,7 @@
 /**
  * Complex class file
  */
-
+package main.java;
 
 
 /**

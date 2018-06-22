@@ -9,7 +9,7 @@ jacoco {
 
 version = '1.0.0'
 applicationName = "ImmutableComplex"
-mainClassName = "Main"
+mainClassName = "main.java.Main"
 
 repositories {
 	jcenter()
@@ -17,6 +17,20 @@ repositories {
 
 dependencies {
 	testCompile "junit:junit:4+"
+}
+
+// Here sourceSets is redundant as these are the default gradle paths
+sourceSets{
+	main {
+		java {
+			srcDir 'src/main/java'
+		}
+	}
+	test {
+		java {
+			srcDir 'src/main/tests'
+		}
+	}
 }
 
 // Specify the jar manifest to make it executable
@@ -37,5 +51,6 @@ jacocoTestReport {
     }
 }
 
+// Finalize test task with jacocoTestReport function
 test.finalizedBy(jacocoTestReport)
 
