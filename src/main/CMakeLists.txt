@@ -1,7 +1,7 @@
 cmake_minimum_required (VERSION 2.8) 
 project (IMMCOMPLX_JAVA_MAIN Java) 
 
-set(CMAKE_JAVA_TARGET_OUTPUT_NAME immutablecomplex-${IMMCOMPLX_VERSION})
+set(CMAKE_JAVA_TARGET_OUTPUT_NAME immutablecomplex)
 
 # Compile the source files into a jar with a main
 add_jar(immutablecomplex java/Complex.java java/Main.java 

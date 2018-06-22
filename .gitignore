@@ -8,4 +8,6 @@ build/
 *.out
 .classpath
 .gradle/
-buildCmake/
+buildCMake/
+install/
+
