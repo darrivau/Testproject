@@ -26,3 +26,21 @@ cache:
   directories:
     - $HOME/.gradle/caches/
     - $HOME/.gradle/wrapper/
+
+deploy:
+  script:
+    - ./gradlew run
+    - ./gradlew javadoc
+    - ./gradlew jar
+    - mkdir -p public/ && cp -r index.html public/
+    - mkdir -p public/Tests_Results && cp -r build/reports/tests/test/* public/Tests_Results/
+    - mkdir -p public/Jacoco && cp -r build/jacocoHtml/* public/Jacoco/
+    - mkdir -p public/Javadoc && cp -r build/docs/javadoc/* public/Javadoc/
+    - cp -r build/libs/ImmutableComplex-1.0.0.jar public/
+  provider: pages
+  skip-cleanup: true
+  github-token: $PAGE_TOKEN
+  keep-history: true
+  local-dir: public
+  on:
+    branch: master
