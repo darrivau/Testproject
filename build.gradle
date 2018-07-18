@@ -63,6 +63,7 @@ task formatIndex(type: Copy) {
   rename { String fileName -> fileName.replace("index_template.html", "index.html")}
   // Substitute property references in files
   def remote = "git rev-parse --abbrev-ref --symbolic-full-name @{u}".execute().text.trim().split('/')[0]
+  println(remote)
   def url = "git remote get-url $remote".execute().text.trim()
   println(url)
   if(url.contains("github.com")){
@@ -71,7 +72,7 @@ task formatIndex(type: Copy) {
   else if(url.contains("lis-lab.fr")){
   	project.ext."pageurl" = "http://denis.arrivault.pages.lis-lab.fr/Test_Project"
   }else{
-    project.ext."pageurl" = "Testproject"
+    project.ext."pageurl" = ""
   }
   expand project.properties
 }
