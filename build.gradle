@@ -62,17 +62,17 @@ task formatIndex(type: Copy) {
   into '.'
   rename { String fileName -> fileName.replace("index_template.html", "index.html")}
   // Substitute property references in files
-  //expand(version: "${project.version}")
   def remote = "git rev-parse --abbrev-ref --symbolic-full-name @{u}".execute().text.trim().split('/')[0]
   def url = "git remote get-url $remote".execute().text.trim()
-  def pageurl = ""
   if(url.contains("github.com")){
-	pageurl = "https://darrivau.github.io/Testproject"
+	project.ext."pageurl" = "https://darrivau.github.io/Testproject"
   }
-  if(url.contains("lis-lab.fr")){
-  	pageurl = "http://denis.arrivault.pages.lis-lab.fr/Test_Project"
+  else if(url.contains("lis-lab.fr")){
+  	project.ext."pageurl" = "http://denis.arrivault.pages.lis-lab.fr/Test_Project"
+  }else{
+    project.ext."pageurl" = "${buildDir}/"
   }
-  println(pageurl)
+  expand project.properties
 }
 
 javadoc.finalizedBy formatIndex
