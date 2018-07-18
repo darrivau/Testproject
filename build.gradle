@@ -64,13 +64,14 @@ task formatIndex(type: Copy) {
   // Substitute property references in files
   def remote = "git rev-parse --abbrev-ref --symbolic-full-name @{u}".execute().text.trim().split('/')[0]
   def url = "git remote get-url $remote".execute().text.trim()
+  println(url)
   if(url.contains("github.com")){
 	project.ext."pageurl" = "https://darrivau.github.io/Testproject"
   }
   else if(url.contains("lis-lab.fr")){
   	project.ext."pageurl" = "http://denis.arrivault.pages.lis-lab.fr/Test_Project"
   }else{
-    project.ext."pageurl" = "${buildDir}/"
+    project.ext."pageurl" = "Testproject"
   }
   expand project.properties
 }
