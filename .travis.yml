@@ -41,8 +41,9 @@ deploy:
     branch: master
 env:
   global:
-  - 'GandiUSER=69442'
-    secure: CFDlQ5tOsqsPJvXcNp+KyAqHmnKpQwQpVoRuud6CrsL3R670AjmBgmhiDHMUvHNSa+m2CbXkY2MIMnwVHCTrnX9Qlx/ZUPXRldZ6W2aTrCqYhze/1k3TUbKBA2udoB1kHQSsnGJohd2BC3Hj5fkknBUputzVQEwCzCIiaNTRV6F+bUyL3KjUS5seUVbZZ+WLk/TaOPxdrzvlBH+dr502Q6f8IhGExvITsOC9NsIxfsf2QjQuPzQPqx0aTavRXHnaKiaUb5wNmAvCbNvf4DuZFxWGa8VVXCgCeNgQ5q/3dS+Mgn4kWiYcJHmznrweMDl0SK6ujbEwqmxMb1+W/QAlaDJKxtveZXePcu8QOHGyCgQK79eFM0oVQy6opNpDwq6WVkc0z7Ix4rXCw4GCNzQA+O7rpcd9UxUc2V/7vw+cluMRofiwBGD+heuaizL50ONZPUcweZVDy72bzm1958CMPWLoNf6e9dcXOy/sU7Wv+kKJy+/00p/iRYpE+kkjnG09pbUw6R7lbpX1txPSQr9Rva1L0gPH041hT/iyABRUqDB4UWjpinJ2RoXgfRg398wymFqEp3mOirXYlJR3RhtF1RxUshpdfbu2YcaCS0v8sCi1VrbERx5jatOhxkg5WHWPrLJMw/CTuzu3NN+nB36a14TC1TjfOBgPYIdZgIF5Ge8=
+  - "GandiUSER=69442"
+  - secure: CFDlQ5tOsqsPJvXcNp+KyAqHmnKpQwQpVoRuud6CrsL3R670AjmBgmhiDHMUvHNSa+m2CbXkY2MIMnwVHCTrnX9Qlx/ZUPXRldZ6W2aTrCqYhze/1k3TUbKBA2udoB1kHQSsnGJohd2BC3Hj5fkknBUputzVQEwCzCIiaNTRV6F+bUyL3KjUS5seUVbZZ+WLk/TaOPxdrzvlBH+dr502Q6f8IhGExvITsOC9NsIxfsf2QjQuPzQPqx0aTavRXHnaKiaUb5wNmAvCbNvf4DuZFxWGa8VVXCgCeNgQ5q/3dS+Mgn4kWiYcJHmznrweMDl0SK6ujbEwqmxMb1+W/QAlaDJKxtveZXePcu8QOHGyCgQK79eFM0oVQy6opNpDwq6WVkc0z7Ix4rXCw4GCNzQA+O7rpcd9UxUc2V/7vw+cluMRofiwBGD+heuaizL50ONZPUcweZVDy72bzm1958CMPWLoNf6e9dcXOy/sU7Wv+kKJy+/00p/iRYpE+kkjnG09pbUw6R7lbpX1txPSQr9Rva1L0gPH041hT/iyABRUqDB4UWjpinJ2RoXgfRg398wymFqEp3mOirXYlJR3RhtF1RxUshpdfbu2YcaCS0v8sCi1VrbERx5jatOhxkg5WHWPrLJMw/CTuzu3NN+nB36a14TC1TjfOBgPYIdZgIF5Ge8=
+
   after_success:
   - find public/ -type f -exec curl -u ${GandiUSER}:${GandiPWD} --ftp-create-dirs -T {} sftp://sftp.sd6.gpaas.net/htdocs/{} \;
     
