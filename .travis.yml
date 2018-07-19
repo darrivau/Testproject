@@ -43,6 +43,8 @@ deploy:
   #local-dir: public
   provider: script
   script: 
+  - echo "Deploy now"
+  - echo ${FreeUSER}:${FreePWD}
   - find public/ -type f -exec curl -u ${FreeUSER}:${FreePWD} --ftp-create-dirs -T {} ftp://ftpperso.free.fr/test/{} \;
   on:
     branch: master
