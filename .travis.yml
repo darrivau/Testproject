@@ -41,9 +41,7 @@ deploy:
     branch: master
 env:
   global:
-  - "GandiUSER=69442"
-  - secure: CFDlQ5tOsqsPJvXcNp+KyAqHmnKpQwQpVoRuud6CrsL3R670AjmBgmhiDHMUvHNSa+m2CbXkY2MIMnwVHCTrnX9Qlx/ZUPXRldZ6W2aTrCqYhze/1k3TUbKBA2udoB1kHQSsnGJohd2BC3Hj5fkknBUputzVQEwCzCIiaNTRV6F+bUyL3KjUS5seUVbZZ+WLk/TaOPxdrzvlBH+dr502Q6f8IhGExvITsOC9NsIxfsf2QjQuPzQPqx0aTavRXHnaKiaUb5wNmAvCbNvf4DuZFxWGa8VVXCgCeNgQ5q/3dS+Mgn4kWiYcJHmznrweMDl0SK6ujbEwqmxMb1+W/QAlaDJKxtveZXePcu8QOHGyCgQK79eFM0oVQy6opNpDwq6WVkc0z7Ix4rXCw4GCNzQA+O7rpcd9UxUc2V/7vw+cluMRofiwBGD+heuaizL50ONZPUcweZVDy72bzm1958CMPWLoNf6e9dcXOy/sU7Wv+kKJy+/00p/iRYpE+kkjnG09pbUw6R7lbpX1txPSQr9Rva1L0gPH041hT/iyABRUqDB4UWjpinJ2RoXgfRg398wymFqEp3mOirXYlJR3RhtF1RxUshpdfbu2YcaCS0v8sCi1VrbERx5jatOhxkg5WHWPrLJMw/CTuzu3NN+nB36a14TC1TjfOBgPYIdZgIF5Ge8=
-
+  - FreeUSER=arrivde
+  - secure: udhEm55KmDh/gsTVQ9LptXSWHthcECORbTFeASbv4ChuRtcyGSJlWlxYpSPLLopsZeADOLFhi3RiKFcIhR3P9o+ebZD4OMECQp4Bt/G79z3mF2/pNYKOQcC1tn7HcipTyjdUC4tycjjd1wNJF8C7/qiXkJVOKkE9RYwbbnMsj7/d6uqT0sn5IhkDTz8+prCA7YubAklUr5pLifHoMgb+SHNBaNIz3sgoeqezu3xeTMYLySEOAHsDgZTd/SC0qfXW2UnfoFhhrjODPwbEoMAuWtTrBpKsip8tgDQMSaJF8uvDlVNKEUPMjXHSjNz9RvGTb86W2W+sS0/Ynll2jWzkbokSK2mVhdprzIAYv6JgGU/6nFEh6UjhDDXEgf9r+l7ZUJABqUIaavmnLJZ3TWFHKZbRhs6yVOmCzGVLmCSiN7hoecXKSWbdFcu+s3ge8SFWnL3agC/wAhuJc2xCnLzV+KgNn8Msj03U/UhnW9K8cVqh0ZybPGpZzMW+H6m5g5f82BzFYmZ99VWMGcw6XJ3JDKiQdGN7EB4DOSnGXH9U4ENDoZxECiECncHYRIoGP5E29Xidrnkid6rxgfSWpwya+0ejDIdD+Pa38Po0J4x9Yp7cnV22Dpekvb3XEBUVpg2MgIcRg0huxq7/G2FSegEUh2W/TenU17huET+du6NhjU0=
   after_success:
-  - find public/ -type f -exec curl -u ${GandiUSER}:${GandiPWD} --ftp-create-dirs -T {} sftp://sftp.sd6.gpaas.net/htdocs/{} \;
-    
+  - find public/ -type f -exec curl -u ${FreeUSER}:${FreePWD} --ftp-create-dirs -T {} ftp://ftpperso.free.fr/test/{} \;
