@@ -35,16 +35,16 @@ cache:
   directories:
   - "$HOME/.gradle/caches/"
   - "$HOME/.gradle/wrapper/"
-deploy:
+#deploy:
   #provider: pages
   #skip-cleanup: true
   #github-token: "$PAGE_TOKEN"
   #keep-history: true
   #local-dir: public
-  provider: script
-  script: 
-  - echo "Deploy now"
+  #on:
+  #  branch: master
+
+after_success:
+  - echo "Upload now"
   - echo ${FreeUSER}:${FreePWD}
   - find public/ -type f -exec curl -u ${FreeUSER}:${FreePWD} --ftp-create-dirs -T {} ftp://ftpperso.free.fr/test/{} \;
-  on:
-    branch: master
