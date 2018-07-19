@@ -1,4 +1,8 @@
 language: java
+env:
+  global:
+  - FreeUSER=arrivde
+  - secure: udhEm55KmDh/gsTVQ9LptXSWHthcECORbTFeASbv4ChuRtcyGSJlWlxYpSPLLopsZeADOLFhi3RiKFcIhR3P9o+ebZD4OMECQp4Bt/G79z3mF2/pNYKOQcC1tn7HcipTyjdUC4tycjjd1wNJF8C7/qiXkJVOKkE9RYwbbnMsj7/d6uqT0sn5IhkDTz8+prCA7YubAklUr5pLifHoMgb+SHNBaNIz3sgoeqezu3xeTMYLySEOAHsDgZTd/SC0qfXW2UnfoFhhrjODPwbEoMAuWtTrBpKsip8tgDQMSaJF8uvDlVNKEUPMjXHSjNz9RvGTb86W2W+sS0/Ynll2jWzkbokSK2mVhdprzIAYv6JgGU/6nFEh6UjhDDXEgf9r+l7ZUJABqUIaavmnLJZ3TWFHKZbRhs6yVOmCzGVLmCSiN7hoecXKSWbdFcu+s3ge8SFWnL3agC/wAhuJc2xCnLzV+KgNn8Msj03U/UhnW9K8cVqh0ZybPGpZzMW+H6m5g5f82BzFYmZ99VWMGcw6XJ3JDKiQdGN7EB4DOSnGXH9U4ENDoZxECiECncHYRIoGP5E29Xidrnkid6rxgfSWpwya+0ejDIdD+Pa38Po0J4x9Yp7cnV22Dpekvb3XEBUVpg2MgIcRg0huxq7/G2FSegEUh2W/TenU17huET+du6NhjU0=
 jdk:
 - oraclejdk8
 - openjdk8
@@ -39,9 +43,4 @@ deploy:
   local-dir: public
   on:
     branch: master
-env:
-  global:
-  - FreeUSER=arrivde
-  - secure: udhEm55KmDh/gsTVQ9LptXSWHthcECORbTFeASbv4ChuRtcyGSJlWlxYpSPLLopsZeADOLFhi3RiKFcIhR3P9o+ebZD4OMECQp4Bt/G79z3mF2/pNYKOQcC1tn7HcipTyjdUC4tycjjd1wNJF8C7/qiXkJVOKkE9RYwbbnMsj7/d6uqT0sn5IhkDTz8+prCA7YubAklUr5pLifHoMgb+SHNBaNIz3sgoeqezu3xeTMYLySEOAHsDgZTd/SC0qfXW2UnfoFhhrjODPwbEoMAuWtTrBpKsip8tgDQMSaJF8uvDlVNKEUPMjXHSjNz9RvGTb86W2W+sS0/Ynll2jWzkbokSK2mVhdprzIAYv6JgGU/6nFEh6UjhDDXEgf9r+l7ZUJABqUIaavmnLJZ3TWFHKZbRhs6yVOmCzGVLmCSiN7hoecXKSWbdFcu+s3ge8SFWnL3agC/wAhuJc2xCnLzV+KgNn8Msj03U/UhnW9K8cVqh0ZybPGpZzMW+H6m5g5f82BzFYmZ99VWMGcw6XJ3JDKiQdGN7EB4DOSnGXH9U4ENDoZxECiECncHYRIoGP5E29Xidrnkid6rxgfSWpwya+0ejDIdD+Pa38Po0J4x9Yp7cnV22Dpekvb3XEBUVpg2MgIcRg0huxq7/G2FSegEUh2W/TenU17huET+du6NhjU0=
-  after_success:
-  - find public/ -type f -exec curl -u ${FreeUSER}:${FreePWD} --ftp-create-dirs -T {} ftp://ftpperso.free.fr/test/{} \;
+  after_success: find public/ -type f -exec curl -u ${FreeUSER}:${FreePWD} --ftp-create-dirs -T {} ftp://ftpperso.free.fr/test/{} \;
