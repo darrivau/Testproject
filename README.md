@@ -13,7 +13,7 @@ The project contains CMake and Gradle scripts that enable to build it with both 
 Contact
 =======
 
-Denis Arrivault : denis.arrivault/NOSPAM<AT>NOSPAM/lif.univ-mrs.fr
+Denis Arrivault : denis.arrivault/NOSPAM<AT>NOSPAM/institutoptique.fr
 
 
 =======
