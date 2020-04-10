@@ -60,7 +60,7 @@ test.finalizedBy(jacocoTestReport)
 task formatIndex(type: Copy) {
   from 'index_template.html'
   into '.'
-  rename { String fileName -> fileName.replace("index_template.html", "index.html")}
+  rename { String fileName -> fileName.replace("index_temp.html", "index.html")}
   // Substitute property references in files
   def url = "git config --get remote.origin.url".execute().text.trim()
   println(url)
